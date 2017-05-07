@@ -1,7 +1,7 @@
 {
   "license": "MIT",
   "name": "madcode-utils-checkers",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "warn and throw on check utils",
   "author": {
     "name": "MAD Code: bizarre",
@@ -10,9 +10,9 @@
   "bugs": {
     "email": "madcode.tech@gmail.com"
   },
-  "repository":{
-    "type" : "git",
-    "url" : "https://github.com/madcode-tech/madcode-utils-checkers.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/madcode-tech/madcode-utils-checkers.git"
   },
   "main": "./source/entry.js",
   "scripts": {}
