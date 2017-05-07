@@ -1,7 +1,7 @@
 {
   "license": "MIT",
   "name": "madcode-utils-checkers",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "warn and throw on check utils",
   "author": {
     "name": "MAD Code: bizarre",
