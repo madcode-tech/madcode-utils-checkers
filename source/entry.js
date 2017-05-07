@@ -17,10 +17,11 @@ function prepare(messages) {
   ).trim();
 }
 
-var LOGGER = function(message) { console.log(message); } // eslint-disable-line
+var LOGGER_DEFAULT  = function(message) { console.log(message); }; // eslint-disable-line
+var LOGGER          = LOGGER_DEFAULT;
 
 module.exports = {
-  setLogger: function(logger) { LOGGER = logger; },
+  setLogger: function(logger) { LOGGER = logger || LOGGER_DEFAULT; },
   throwIf: function(check) {
     for (var _len = arguments.length, messages = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
         messages[_key - 1] = arguments[_key];
