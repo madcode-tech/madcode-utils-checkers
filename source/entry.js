@@ -1,5 +1,5 @@
 function safeExecute(func) {
-  let result = '';
+  var result = '';
 
   try { result = func(); } catch(e) { result = JSON.stringify(e); } // eslint-disable-line
 
@@ -17,16 +17,24 @@ function prepare(messages) {
   ).trim();
 }
 
-let LOGGER = function(message) { console.log(message); } // eslint-disable-line
+var LOGGER = function(message) { console.log(message); } // eslint-disable-line
 
 module.exports = {
-  setLogger(logger) { LOGGER = logger; },
-  throwIf: function(check, ...messages) {
+  setLogger: function(logger) { LOGGER = logger; },
+  throwIf: function(check) {
+    for (var _len = arguments.length, messages = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        messages[_key - 1] = arguments[_key];
+    }
+
     if (check) { throw new Error(prepare(messages)); }
 
     return check;
   },
-  warnIf: function(check, ...messages) {
+  warnIf: function(check) {
+    for (var _len = arguments.length, messages = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        messages[_key - 1] = arguments[_key];
+    }
+
     if (check) { LOGGER(prepare(messages)); }
 
     return check;
